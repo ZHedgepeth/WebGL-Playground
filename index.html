@@ -3,21 +3,26 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="webgl.css" type="text/css">
+<!-- following script loads silvesterJS -->
+    <script src="silvester.js" type="text/javascript"></script>
+<!-- following script loads our glUtilsJS -->
+    <script src="glUtils.js" type="text/javascript"></script>
 
-    <!-- following script : vertex shader program. -->
+<!-- following script loads vertex shader program. -->
     <script id="shader-vs" type="x-shader/x-vertex">
       attribute vec3 aVertexPosition;
-
       uniform mat4 uMVMatrix;
       uniform mat4 uPMatrix;
-
       void main(void) {
-
+        gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
       }
-
     </script>
-    <!-- following script : fragment shader program. -->
+
+<!-- following script : fragment shader program. -->
     <script id="shader-fs" type="x-shader/x-fragment">
+      void main(void) {
+        gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+      }
     </script>
 
     <script type="text/Javascript" src="webgl.js"></script>
