@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="webgl.css" type="text/css">
+
+    <!-- following script : vertex shader program. -->
+    <script id="shader-vs" type="x-shader/x-vertex">
+      attribute vec3 aVertexPosition;
+
+      uniform mat4 uMVMatrix;
+      uniform mat4 uPMatrix;
+
+      void main(void) {
+
+      }
+
+    </script>
+    <!-- following script : fragment shader program. -->
+    <script id="shader-fs" type="x-shader/x-fragment">
+    </script>
+
+    <script type="text/Javascript" src="webgl.js"></script>
+    <title>WebGL Demo For Saks</title>
+  </head>
+  <body onload="start()">
+    <canvas id="glcanvas" width="640" height="480">
+      No support for <code>&lt;canvas&gt;</code>
+    </canvas>
+  </body>
+</html>
